@@ -7,8 +7,8 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-	name = Christian Lempa
-	email = christian.lempa@clcreative.de
+	name = Simon Mor
+	email = simomor@gmail.com
 [commit]
 	template = /Users/xcad/.stCommitMsg
 [filter "lfs"]
