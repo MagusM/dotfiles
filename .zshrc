@@ -95,10 +95,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/simon.mor/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/simon.mor/google-cloud-sdk/path.zsh.inc'; fi
@@ -106,21 +102,11 @@ if [ -f '/Users/simon.mor/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/simon
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/simon.mor/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/simon.mor/google-cloud-sdk/completion.zsh.inc'; fi
 
-#nvm
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# this will load zsh env
+if [ -f ~/.zshenv ]; then . ~/.zshenv; fi
 
-
-#yarn
-export PATH="$(yarn global bin):$PATH"
-
-#gpg
-export GPG_TTY=$(tty)
-
-#my aliases
-alias carwiz='cd /Users/simon.mor/carwiz'
-alias webstorm='open -a "WebStorm.app"'
+# this will load zsh aliases
+if [ -f ~/.zsh/aliases.zsh ]; then . ~/.zsh/aliases.zsh; fi
 
 # [[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
